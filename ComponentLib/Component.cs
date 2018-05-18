@@ -2,7 +2,7 @@
 using System.Text;
 using RabbitMQ.Client;
 
-namespace ComponentLib{
+namespace ComponentLib {
     public class Component : IDisposable {
 
         //consumer class
@@ -29,11 +29,11 @@ namespace ComponentLib{
         public string RoutingKey { get; private set; }
         public string QueueName { get; private set; }
 
-        public Component (string routingKey, string queueName, string rbmqUsername, string rbmqPassword) {
+        public Component (string routingKey, string queueName, string rbmqUsername, string rbmqPassword, string rbmqServerUrl) {
             RoutingKey = routingKey;
             QueueName = queueName??Guid.NewGuid ().ToString ();
             m_factory = new ConnectionFactory ();
-            m_factory.Endpoint = new AmqpTcpEndpoint ("localhost");
+            m_factory.Endpoint = new AmqpTcpEndpoint (new Uri ($"amqp://{rbmqServerUrl}"));
             m_factory.UserName = rbmqUsername;
             m_factory.Password = rbmqPassword;
         }

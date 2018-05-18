@@ -4,7 +4,7 @@ using ComponentLib;
 namespace Cal.Components {
     public class CalUnit : ThreadComponet {
         public Dictionary<string, string> calDic { get; private set; }
-        public CalUnit (string routingKey, string queueName = null, string rbmqUsername = "ziyuandev", string rbmqPassword = "123456") : base (routingKey, queueName, rbmqUsername, rbmqPassword) {
+        public CalUnit (string routingKey, string queueName, string rbmqUsername, string rbmqPassword, string rbmqServerUrl) : base (routingKey, queueName, rbmqUsername, rbmqPassword,rbmqServerUrl) {
             calDic = new Dictionary<string, string> ();
         }
         override protected void onRecieve (string msg, MessageHandlerContext context) {

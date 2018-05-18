@@ -8,11 +8,16 @@ namespace Cal {
     class Program {
         static void Main (string[] args) {
 
-            CalUnit cal = new CalUnit ("aggregate.calUnit", "calUnit");
-            Add add = new Add ("chips.add", "add");
-            Sub sub = new Sub ("chips.sub", "sub");
-            Mul mul = new Mul ("chips.mul", "mul");
-            Div div = new Div ("chips.div", "div");
+            //you should change these configurations for your own rabbitmq server
+            string rbmqUsername = "ziyuandev";
+            string rbmqPassword = "123456";
+            string rbmqServerUrl = "localhost";
+
+            CalUnit cal = new CalUnit ("aggregate.calUnit", "calUnit", rbmqUsername, rbmqPassword, rbmqServerUrl);
+            Add add = new Add ("chips.add", "add", rbmqUsername, rbmqPassword, rbmqServerUrl);
+            Sub sub = new Sub ("chips.sub", "sub", rbmqUsername, rbmqPassword, rbmqServerUrl);
+            Mul mul = new Mul ("chips.mul", "mul", rbmqUsername, rbmqPassword, rbmqServerUrl);
+            Div div = new Div ("chips.div", "div", rbmqUsername, rbmqPassword, rbmqServerUrl);
 
             Console.WriteLine ("working...");
 

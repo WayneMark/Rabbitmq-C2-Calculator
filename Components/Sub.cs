@@ -3,7 +3,7 @@ using System.Diagnostics;
 using ComponentLib;
 namespace Cal.Components {
     public class Sub : ThreadComponet {
-        public Sub (string routingKey, string queueName = null, string rbmqUsername = "ziyuandev", string rbmqPassword = "123456") : base (routingKey, queueName, rbmqUsername, rbmqPassword) {
+        public Sub (string routingKey, string queueName, string rbmqUsername, string rbmqPassword, string rbmqServerUrl) : base (routingKey, queueName, rbmqUsername, rbmqPassword, rbmqServerUrl) {
 
         }
         override protected void onRecieve (string msg, MessageHandlerContext context) {
