@@ -6,7 +6,7 @@ A simple calculator for C2 style created by .net core 2.0 and rabbitmq.client in
 
 1. Firstly, you need to install [Erlang enviorment](https://www.erlang.org/) for rabbitmq.
 
-2. Then, install [Rabbitmq-Server](https://www.erlang.org/downloads) to your target machine. More specific examples for rabbitmq, you can refer to [here](http://www.cnblogs.com/yangecnu/p/4227535.html). After you install rabbitmq server, you shuld change these code in Program.cs for your own.
+2. Then, install [Rabbitmq-Server](http://www.rabbitmq.com/download.html) to your target machine. More specific examples for rabbitmq, you can refer to [here](http://www.cnblogs.com/yangecnu/p/4227535.html). After you install rabbitmq server, you shuld change these code in Program.cs for your own.
 
 ```
     string rbmqUsername = "ziyuandev";
